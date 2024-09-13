@@ -6,7 +6,7 @@ function Navbar() {
       <nav className=''>
         <div className='flex flex-row mx-auto px-[40px] py-[25px] justify-between items-center mt-[0px] bg-black'>
           <div className='font-bold text-2xl text-purple-400'>
-            <a href='/'>Puffer</a>
+            <a href='/'>Aptos</a>
           </div>
           <div className='flex justify-center flex-1 space-x-8 text-center'>
             <h1 className='font-bold text-2xl text-white'>
