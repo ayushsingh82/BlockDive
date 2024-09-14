@@ -1,11 +1,9 @@
-// NftPage.jsx
-
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 
 // Create API instance using environment variables
-const apiKey ="-K5v1arBZA9ZC-tYoG9rYbwTLCuAHo8a";
+const apiKey = "-K5v1arBZA9ZC-tYoG9rYbwTLCuAHo8a";
 const protocol = "ethereum";
 const network = "mainnet";
 
@@ -42,6 +40,7 @@ export const useGetNFTOwnedByAccount = (accountAddress, page) => {
         return null;
       }
     },
+    enabled: !!accountAddress, // Only run query if accountAddress is provided
     retry: false,
     staleTime: 1000 * 60 * 5, // 5 minutes
   });
@@ -66,7 +65,7 @@ const NftTable = ({ ownedNftsByAccountData }) => {
             {ownedNftsByAccountData.items.map((item, index) => (
               <tr
                 key={index + item.contract.deployedTransactionHash}
-                className="border border-green-500 hover:scale-105 duration-100 cursor-pointer"
+                className="border text-white border-green-500 hover:scale-105 duration-100 cursor-pointer"
               >
                 <th className="font-bold p-5">
                   {ownedNftsByAccountData.page === 1
@@ -92,8 +91,7 @@ const NftTable = ({ ownedNftsByAccountData }) => {
 };
 
 // Main component to display the NFT list
-const NftList = () => {
-  const accountAddress = "0x385E0b7d653A0a2e1a1703Bd79C7a6558EfDc31b"; // Replace with actual account address
+const NftList = ({ accountAddress }) => {
   const currentPage = 1; // Set the page number for pagination
 
   const { data: ownedNftData, isLoading, isError } = useGetNFTOwnedByAccount(accountAddress, currentPage);
@@ -108,14 +106,34 @@ const NftList = () => {
   );
 };
 
-// Final wrapper component for the NFT page
-const NFT = () => {
+// Final wrapper component for the NFT page with input box for account address
+const NFTPage = () => {
+  const [accountAddress, setAccountAddress] = useState(""); // State for input box
+
+  const handleInputChange = (e) => {
+    setAccountAddress(e.target.value);
+  };
+
   return (
-    <div>
-    
-      <NftList />
+    <div className="flex flex-col items-center bg-black min-h-screen">
+     
+      <input
+        type="text"
+        placeholder="Enter Account Address"
+        value={accountAddress}
+        onChange={handleInputChange}
+        className="border-2 mt-[20px] border-transparent bg-black text-white p-2 mb-5 w-1/2 rounded focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+        style={{
+          borderImage: "linear-gradient(45deg, #00FF7F, #1E90FF) 1",
+        }}
+      />
+      {accountAddress ? (
+        <NftList accountAddress={accountAddress} />
+      ) : (
+        <div className="text-white">Please enter an account address</div>
+      )}
     </div>
   );
 };
 
-export default NFT;
+export default NFTPage;

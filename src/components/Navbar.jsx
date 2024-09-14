@@ -16,10 +16,10 @@ function Navbar() {
             <a href='/'>Aptos</a>
           </div>
           <div className='flex justify-center flex-1 space-x-8 text-center'>
-            <h1 className='font-mediumm text-xl text-white'>
+            <h1 className='font-mediumm text-lg text-white'>
               <a href='/token'>Token</a>
             </h1>
-            <h1 className='font-medium text-xl text-white'>
+            <h1 className='font-medium text-lg text-white'>
               <a href='/nft'>NFT</a>
             </h1>
           </div>
