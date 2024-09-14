@@ -6,6 +6,8 @@ import {createBrowserRouter,RouterProvider,createRoutesFromElements} from 'react
 import { Route } from 'react-router-dom'
 import Home from './components/Home.jsx'
 import Navbar from './components/Navbar.jsx'
+import NFT from './components/NFT.jsx'
+import Token from './components/Token.jsx'
 
 import '@rainbow-me/rainbowkit/styles.css';
 
@@ -38,6 +40,8 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
     <Route path='/' element={<Home/>}/>
+    <Route path='/nft' element={<NFT/>}/>
+    <Route path='/token' element={<Token/>}/>
     </Route>
   )
 )
