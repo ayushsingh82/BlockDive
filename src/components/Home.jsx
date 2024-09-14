@@ -3,10 +3,45 @@ import { motion } from "framer-motion";
 import { twMerge } from "tailwind-merge";
 
 import { TypewriterEffectSmooth } from './ui/typewriter-effect';
+import { BackgroundBeams } from "./ui/background-beams";
 
 
-
-
+function BackgroundBeamsDemo() {
+    return (
+      <div className="h-[60rem] w-full rounded-md bg-neutral-950 relative flex flex-col items-center justify-center antialiased">
+        <div className="max-w-2xl mx-auto p-4 mt-[-280px]">
+          <h1 className="relative z-10 text-lg md:text-7xl  bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600  text-center font-sans font-bold">
+          <TypewriterEffectSmoothDemo/>
+          </h1>
+          <p></p>
+          <p className="text-neutral-500 max-w-lg mx-auto my-2 text-sm text-center relative z-10">
+            Welcome to MailJet, the best transactional email service on the web.
+            We provide reliable, scalable, and customizable email solutions for
+            your business. Whether you&apos;re sending order confirmations,
+            password reset emails, or promotional campaigns, MailJet has got you
+            covered.
+          </p>
+          <button className='ml-[150px] mt-[20px] '
+          style={{
+            padding: '10px',
+            fontSize: '1.25rem',
+            color: 'white', // Button text color
+            border: '2px solid transparent',
+            borderRadius: '0.5rem',
+            backgroundImage:
+              'linear-gradient(black, black), linear-gradient(to right, #45E1E5, #0052FF, #B82EA4, #FF9533, #7FD057, #45E1E5)',
+            backgroundOrigin: 'border-box',
+            backgroundClip: 'padding-box, border-box',
+          }}
+        >
+          Join the community
+        </button>
+        
+        </div>
+        <BackgroundBeams />
+      </div>
+    );
+  }
 
 const TypewriterEffectSmoothDemo = () => {
     const words = [
@@ -14,14 +49,14 @@ const TypewriterEffectSmoothDemo = () => {
             text: "Run",
         },
         {
-            text: "Nodes",
+            text: "Explore",
         },
         {
             text: "with",
         },
         {
-            text: "Puffer.",
-            className: "text-purple-500 dark:text-purple-500",
+            text: "Aptos.",
+            className: "text-green-500 dark:text-green-500",
         },
     ];
     return (
@@ -36,18 +71,9 @@ const TypewriterEffectSmoothDemo = () => {
 function Home() {
     return (
         <div className='flex flex-col items-center bg-black scroller min-h-screen'>
-            <div className='text-4xl'>
-                <TypewriterEffectSmoothDemo />
-            </div>
-            <h3 className='mt-[20px] text-white text-xl'>
-                Create and manage ad campaigns effortlessly. Our user-friendly platform allows you
-                <br /> to design, launch, and monitor your ads seamlessly, ensuring maximum reach and
-                <br /> engagement with minimal hassle.
-            </h3>
-            <button className='mt-[20px] border-2 border-purple-500 text-white px-[10px] py-[10px] font-medium text-xl bg-gradient-to-r from-purple-900 via-black to-black rounded-lg mx-auto'>
-                Join the community
-            </button>
-          
+            
+                 <BackgroundBeamsDemo/> 
+   
         </div>
     )
 }
