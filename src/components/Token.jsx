@@ -1,6 +1,4 @@
-// TokenPage.jsx
-
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 
@@ -41,6 +39,7 @@ export const useGetTokensOwnedByAccount = (accountAddress, page, rpp = 20) => {
         return null;
       }
     },
+    enabled: !!accountAddress, // Only run query if accountAddress is provided
     retry: false,
     staleTime: 1000 * 60 * 5, // 5 minutes
   });
@@ -66,7 +65,7 @@ const TokenTable = ({ ownedTokensByAccountData }) => {
             {ownedTokensByAccountData.items.map((item, index) => (
               <tr
                 key={item.contract.deployedTransactionHash}
-                className="border border-green-500 hover:scale-105 duration-100 cursor-pointer"
+                className="border text-white border-green-500 hover:scale-105 duration-100 cursor-pointer"
               >
                 <th className="font-bold p-5">
                   {ownedTokensByAccountData.page === 1
@@ -82,15 +81,14 @@ const TokenTable = ({ ownedTokensByAccountData }) => {
           </tbody>
         </table>
       ) : (
-        <div>This Account doesn't have any Tokens</div>
+        <div className="text-white">This Account doesn't have any Tokens</div>
       )}
     </div>
   );
 };
 
 // Main component to display the token list
-const TokenList = () => {
-  const accountAddress = "0x123..."; // Replace with actual account address
+const TokenList = ({ accountAddress }) => {
   const currentPage = 1; // Set the page number for pagination
 
   const { data: ownedTokenData, isLoading, isError } = useGetTokensOwnedByAccount(accountAddress, currentPage);
@@ -105,14 +103,50 @@ const TokenList = () => {
   );
 };
 
-// Final wrapper component for the Token page
+// Final wrapper component for the Token page with input box for account address
 const Token = () => {
+  const [accountAddress, setAccountAddress] = useState(""); // State for input box
+
+  const handleInputChange = (e) => {
+    setAccountAddress(e.target.value);
+  };
+
+  // Gradient style for the input box border
+  const gradientStyle = {
+    background: 'linear-gradient(to right, #45E1E5, #0052FF, #B82EA4, #FF9533, #7FD057, #45E1E5)',
+    padding: '2px', // padding for the gradient border
+    borderRadius: '8px',
+    marginBottom: '20px',
+    width: '50%',
+  };
+
+  const inputStyle = {
+    backgroundColor: '#000', // Input box background color
+    border: 'none', // Remove default border
+    color: '#fff', // Text color inside the input
+    padding: '10px',
+    borderRadius: '6px',
+    width: '100%',
+  };
+
   return (
-    <div>
-      <h1 className="text-center text-4xl font-bold my-10">Token Page</h1>
-      <TokenList />
+    <div className="flex flex-col items-center bg-black min-h-screen">
+     
+      <div style={gradientStyle} className="mt-[20px]">
+        <input
+          type="text"
+          placeholder="Enter Account Address"
+          value={accountAddress}
+          onChange={handleInputChange}
+          style={inputStyle}
+        />
+      </div>
+      {accountAddress ? <TokenList accountAddress={accountAddress} /> : <div className="text-white">Please enter an account address</div>}
     </div>
   );
 };
 
 export default Token;
+
+
+//0x385E0b7d653A0a2e1a1703Bd79C7a6558EfDc31b

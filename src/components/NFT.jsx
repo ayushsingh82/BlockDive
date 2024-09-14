@@ -93,7 +93,7 @@ const NftTable = ({ ownedNftsByAccountData }) => {
 
 // Main component to display the NFT list
 const NftList = () => {
-  const accountAddress = "0x123..."; // Replace with actual account address
+  const accountAddress = "0x385E0b7d653A0a2e1a1703Bd79C7a6558EfDc31b"; // Replace with actual account address
   const currentPage = 1; // Set the page number for pagination
 
   const { data: ownedNftData, isLoading, isError } = useGetNFTOwnedByAccount(accountAddress, currentPage);
@@ -112,7 +112,7 @@ const NftList = () => {
 const NFT = () => {
   return (
     <div>
-      <h1 className="text-center text-4xl font-bold my-10">NFT Page</h1>
+    
       <NftList />
     </div>
   );
