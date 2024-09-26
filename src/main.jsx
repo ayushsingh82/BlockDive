@@ -8,7 +8,8 @@ import Home from './components/Home.jsx'
 import Navbar from './components/Navbar.jsx'
 import NFT from './components/NFT.jsx'
 import Token from './components/Token.jsx'
-import Aptos from './components/Aptos/Aptos.jsx'
+import AptosAccounts from './components/Aptos/AptosAccounts.jsx'
+import AptosTransactions from './components/Aptos/AptosTransactions.jsx'
 
 import '@rainbow-me/rainbowkit/styles.css';
 
@@ -43,7 +44,8 @@ const router = createBrowserRouter(
     <Route path='/' element={<Home/>}/>
     <Route path='/nft' element={<NFT/>}/>
     <Route path='/token' element={<Token/>}/>
-    <Route path='/aptos' element={<Aptos/>}/>
+    <Route path='/aptosaccounts' element={<AptosAccounts/>}/>
+    <Route path='/aptostxns' element={<AptosTransactions/>}/>
     </Route>
   )
 )

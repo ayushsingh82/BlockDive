@@ -23,8 +23,11 @@ function Navbar() {
               <a href='/nft'>NFT</a>
             </h1>
             <h1 className='font-medium text-lg text-white'>
-            <a href='/aptos'>Aptos</a>
+            <a href='/aptosaccounts'>AptAccount</a>
           </h1>
+          <h1 className='font-medium text-lg text-white'>
+          <a href='/aptostxns'>AptTnxs</a>
+        </h1>
           </div>
           <div className='text-white'>
           Connect
