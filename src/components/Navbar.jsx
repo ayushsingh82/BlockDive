@@ -22,9 +22,12 @@ function Navbar() {
             <h1 className='font-medium text-lg text-white'>
               <a href='/nft'>NFT</a>
             </h1>
+            <h1 className='font-medium text-lg text-white'>
+            <a href='/aptos'>Aptos</a>
+          </h1>
           </div>
           <div className='text-white'>
-           <ConnectButton/>
+          Connect
           </div>
         </div>
         <div style={gradientStyle} />
