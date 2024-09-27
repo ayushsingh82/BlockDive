@@ -10,6 +10,9 @@ import NFT from './components/NFT.jsx'
 import Token from './components/Token.jsx'
 import AptosAccounts from './components/Aptos/AptosAccounts.jsx'
 import AptosTransactions from './components/Aptos/AptosTransactions.jsx'
+import EthereumNFT from './components/Ethereum/EthereumNFT.jsx'
+import Base from './components/Base.jsx'
+import Arbitrum from './components/Arbitrum.jsx'
 
 import '@rainbow-me/rainbowkit/styles.css';
 
@@ -29,6 +32,7 @@ import {
   QueryClient,
 } from "@tanstack/react-query";
 
+
 const config = getDefaultConfig({
   appName: 'My RainbowKit App',
   projectId: 'e7fa7d19fd057ecd9403a0e89bd62b8b',
@@ -46,6 +50,9 @@ const router = createBrowserRouter(
     <Route path='/token' element={<Token/>}/>
     <Route path='/aptosaccounts' element={<AptosAccounts/>}/>
     <Route path='/aptostxns' element={<AptosTransactions/>}/>
+    <Route path='/ethnft' element={<EthereumNFT/>}/>
+     <Route path='/base' element={<Base/>}/>
+     <Route path='/arbitrum' element={<Arbitrum/>}/>
     </Route>
   )
 )

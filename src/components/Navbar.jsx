@@ -28,6 +28,15 @@ function Navbar() {
           <h1 className='font-medium text-lg text-white'>
           <a href='/aptostxns'>AptTnxs</a>
         </h1>
+        <h1 className='font-medium text-lg text-white'>
+        <a href='/ethnft'>ETHNFT</a>
+      </h1>
+      <h1 className='font-medium text-lg text-white'>
+        <a href='/base'>Base</a>
+      </h1>
+      <h1 className='font-medium text-lg text-white'>
+      <a href='/arbitrum'>Arbitrum</a>
+    </h1>
           </div>
           <div className='text-white'>
           Connect
