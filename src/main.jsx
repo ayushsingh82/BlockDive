@@ -14,6 +14,8 @@ import EthereumNFT from './components/Ethereum/EthereumNFT.jsx'
 import Base from './components/Base.jsx'
 import Arbitrum from './components/Arbitrum.jsx'
 
+import ApiExplorer from './components/ApiExplorer.jsx'
+
 import '@rainbow-me/rainbowkit/styles.css';
 
 import {
@@ -53,6 +55,7 @@ const router = createBrowserRouter(
     <Route path='/ethnft' element={<EthereumNFT/>}/>
      <Route path='/base' element={<Base/>}/>
      <Route path='/arbitrum' element={<Arbitrum/>}/>
+     <Route path='/explorer' element={<ApiExplorer/>}/>
     </Route>
   )
 )

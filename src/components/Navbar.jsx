@@ -1,5 +1,5 @@
 import React from 'react'
-import { ConnectButton } from '@rainbow-me/rainbowkit';
+// import { ConnectButton } from '@rainbow-me/rainbowkit';
 
 const gradientStyle = {
   background: 'linear-gradient(to right, #45E1E5, #0052FF, #B82EA4, #FF9533, #7FD057, #45E1E5)',
@@ -36,6 +36,9 @@ function Navbar() {
       </h1>
       <h1 className='font-medium text-lg text-white'>
       <a href='/arbitrum'>Arbitrum</a>
+    </h1>
+    <h1 className='font-medium text-lg text-white'>
+      <a href='/explorer'>Explorer</a>
     </h1>
           </div>
           <div className='text-white'>
