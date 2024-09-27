@@ -13,7 +13,7 @@ import AptosTransactions from './components/Aptos/AptosTransactions.jsx'
 import EthereumNFT from './components/Ethereum/EthereumNFT.jsx'
 import Base from './components/Base.jsx'
 import Arbitrum from './components/Arbitrum.jsx'
-
+import EthereumToken from './components/Ethereum/EthereumToken.jsx'
 import ApiExplorer from './components/ApiExplorer.jsx'
 
 import '@rainbow-me/rainbowkit/styles.css';
@@ -53,6 +53,7 @@ const router = createBrowserRouter(
     <Route path='/aptosaccounts' element={<AptosAccounts/>}/>
     <Route path='/aptostxns' element={<AptosTransactions/>}/>
     <Route path='/ethnft' element={<EthereumNFT/>}/>
+    <Route path='/ethtoken' element={<EthereumToken/>}/>
      <Route path='/base' element={<Base/>}/>
      <Route path='/arbitrum' element={<Arbitrum/>}/>
      <Route path='/explorer' element={<ApiExplorer/>}/>

@@ -40,6 +40,9 @@ function Navbar() {
     <h1 className='font-medium text-lg text-white'>
       <a href='/explorer'>Explorer</a>
     </h1>
+    <h1 className='font-medium text-lg text-white'>
+    <a href='/ethtoken'>EthToken</a>
+  </h1>
           </div>
           <div className='text-white'>
           Connect

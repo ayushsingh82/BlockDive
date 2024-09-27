@@ -22,7 +22,7 @@ const EthereumNFT = () => {
       headers: {
         accept: 'application/json',
         'content-type': 'application/json',
-        'X-API-KEY': 'nodit-demo'
+        'X-API-KEY': 'Vpr4FxPyIscI2DlzIwTSJ3JebtUf5_W1'
       },
       body: JSON.stringify({ accountAddress: inputValue, withCount: false })
     };
@@ -98,7 +98,7 @@ const EthereumNFT = () => {
 
         {option === 'contract' && (
           <div>
-            <label>Contract Addresses (comma-separated):</label>
+            <label>Contract Addresses :</label>
             <input
               type="text"
               value={inputValue}
@@ -123,3 +123,8 @@ const EthereumNFT = () => {
 };
 
 export default EthereumNFT;
+
+
+
+// account - 0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045
+// contract address - 0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D
