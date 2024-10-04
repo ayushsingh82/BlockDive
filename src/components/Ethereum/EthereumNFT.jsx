@@ -38,7 +38,7 @@ const EthereumNFT = () => {
       headers: {
         accept: 'application/json',
         'content-type': 'application/json',
-        'X-API-KEY': 'nodit-demo'
+         'X-API-KEY': 'Vpr4FxPyIscI2DlzIwTSJ3JebtUf5_W1'
       },
       body: JSON.stringify({
         contractAddresses: inputValue.split(','), // Support multiple contracts
@@ -59,70 +59,81 @@ const EthereumNFT = () => {
   };
 
   return (
-    <div className="ethereum-nft">
-      <h2>Fetch Ethereum NFTs</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>
-            <input
-              type="radio"
-              value="account"
-              checked={option === 'account'}
-              onChange={handleOptionChange}
-            />
-            By Account
-          </label>
-          <label>
-            <input
-              type="radio"
-              value="contract"
-              checked={option === 'contract'}
-              onChange={handleOptionChange}
-            />
-            By Contract
-          </label>
-        </div>
+    <div className="min-h-screen bg-black flex items-center justify-center">
+      <div className="p-8 bg-black rounded-lg border-4 border-transparent bg-clip-padding max-w-3xl w-full" style={{ borderImage: 'linear-gradient(90deg, #FF0080, #7928CA) 1' }}>
+        <h2 className="text-white text-2xl mb-4">Fetch Ethereum NFTs</h2>
+        <form onSubmit={handleSubmit}>
+          <div className="mb-4">
+            <label className="text-white mr-4">
+              <input
+                type="radio"
+                value="account"
+                checked={option === 'account'}
+                onChange={handleOptionChange}
+                className="mr-2"
+              />
+              By Account
+            </label>
+            <label className="text-white">
+              <input
+                type="radio"
+                value="contract"
+                checked={option === 'contract'}
+                onChange={handleOptionChange}
+                className="mr-2"
+              />
+              By Contract
+            </label>
+          </div>
 
-        {option === 'account' && (
-          <div>
-            <label>Account Address:</label>
-            <input
-              type="text"
-              value={inputValue}
-              onChange={handleInputChange}
-              placeholder="Enter Ethereum account address"
-              required
-            />
+          {option === 'account' && (
+            <div className="mb-4">
+              <label className="text-white block mb-2">Account Address:</label>
+              <input
+                type="text"
+                value={inputValue}
+                onChange={handleInputChange}
+                className="p-2 w-full border border-gray-300 rounded bg-black text-white"
+                placeholder="Enter Ethereum account address"
+                required
+              />
+            </div>
+          )}
+
+          {option === 'contract' && (
+            <div className="mb-4">
+              <label className="text-white block mb-2">Contract Addresses:</label>
+              <input
+                type="text"
+                value={inputValue}
+                onChange={handleInputChange}
+                className="p-2 w-full border border-gray-300 rounded bg-black text-white"
+                placeholder="Enter contract addresses"
+                required
+              />
+            </div>
+          )}
+
+          <button type="submit" className="px-4 py-2 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded hover:bg-pink-700">
+            Fetch NFTs
+          </button>
+        </form>
+
+        {results && (
+          <div className="results mt-6 max-w-full">
+            <h3 className="text-white mb-4">Results</h3>
+            <div className="overflow-auto max-h-96 border border-gray-300 rounded p-4 bg-gray-900 text-white">
+              <pre className="whitespace-pre-wrap">{JSON.stringify(results, null, 2)}</pre>
+            </div>
           </div>
         )}
-
-        {option === 'contract' && (
-          <div>
-            <label>Contract Addresses :</label>
-            <input
-              type="text"
-              value={inputValue}
-              onChange={handleInputChange}
-              placeholder="Enter contract addresses"
-              required
-            />
-          </div>
-        )}
-
-        <button type="submit">Fetch NFTs</button>
-      </form>
-
-      {results && (
-        <div className="results">
-          <h3>Results</h3>
-          <pre>{JSON.stringify(results, null, 2)}</pre>
-        </div>
-      )}
+      </div>
     </div>
   );
 };
 
 export default EthereumNFT;
+
 
 
 
