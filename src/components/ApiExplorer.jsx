@@ -15,7 +15,9 @@ const ApiExplorer = () => {
   const apiUrls = {
     polygon: 'https://polygon-mainnet.nodit.io/',
     base: 'https://base-mainnet.nodit.io/',
-    arbitrum: 'https://arbitrum-mainnet.nodit.io/', // Add Arbitrum URL here
+    arbitrum: 'https://arbitrum-mainnet.nodit.io/',
+    optimism: 'https://optimism-mainnet.nodit.io/',
+    ethereum: 'https://ethereum-mainnet.nodit.io/',
   };
 
   const handleSubmit = async (e) => {
@@ -106,7 +108,9 @@ const ApiExplorer = () => {
         >
           <option value="polygon">Polygon</option>
           <option value="base">Base</option>
-          <option value="arbitrum">Arbitrum</option> {/* Add Arbitrum here */}
+          <option value="arbitrum">Arbitrum</option>
+          <option value="optimism">Optimism</option> {/* Added Optimism */}
+          <option value="ethereum">Ethereum</option> {/* Added Ethereum */}
         </select>
       </div>
 
