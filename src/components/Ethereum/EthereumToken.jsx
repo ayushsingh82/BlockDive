@@ -123,7 +123,7 @@ const EthereumToken = () => {
         className="p-8 rounded-lg border-4 border-transparent bg-clip-padding max-w-3xl w-full"
         style={{ borderImage: 'linear-gradient(90deg, #FF0080, #7928CA) 1' }}
       >
-        <h1 className="text-white text-2xl mb-4">Ethereum Token Explorer</h1>
+        <h1 className="text-white text-xl font-semibold  mb-4 text-purple-500">Ethereum Token Explorer</h1>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
@@ -170,7 +170,7 @@ const EthereumToken = () => {
 
           <button
             type="submit"
-            className="px-4 py-2 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded hover:bg-pink-700"
+            className="px-4 font-semibold py-2 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded hover:bg-pink-700"
           >
             Fetch Data
           </button>

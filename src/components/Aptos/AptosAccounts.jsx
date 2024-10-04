@@ -82,17 +82,30 @@ const AptosAccounts = () => {
     }
   };
 
+  const draggableStyle = {
+    maxHeight: '400px', // Increase max height for better visibility
+    maxWidth: '100%', // Ensures the pre block is wider
+    overflow: 'auto',
+    cursor: 'grab',
+  };
+
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-      <div className="bg-white p-8 rounded shadow-md w-full max-w-md">
-        <h1 className="text-2xl font-bold mb-4 text-center">Aptos Data Fetcher</h1>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-black">
+      <div
+        className="bg-black p-8 rounded-lg w-full max-w-3xl border-4 border-transparent"
+        style={{ borderImage: 'linear-gradient(90deg, #32CD32, #006400, #1E90FF, #8A2BE2) 1' }}
+
+
+        // Updated main div width
+      >
+        <h1 className="text-2xl font-bold mb-4 text-green-500 text-center">Aptos Account Data </h1>
 
         {/* Input for the address */}
         <div className="mb-6">
-          <label className="block mb-2 text-sm font-medium text-gray-700">Enter Address:</label>
+          <label className="block mb-2 text-sm font-medium text-gray-300">Enter Address:</label>
           <input
             type="text"
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+            className="w-full px-4 py-2 border border-gray-600 rounded-lg shadow-sm bg-gray-900 text-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
             value={address}
             onChange={(e) => setAddress(e.target.value)}
             placeholder="Enter Aptos account address"
@@ -101,9 +114,9 @@ const AptosAccounts = () => {
 
         {/* Radio buttons to select the data type */}
         <div className="mb-6">
-          <h2 className="text-lg font-medium mb-2">Select Data Type:</h2>
+          <h2 className="text-lg font-medium mb-2 text-white">Select Data Type:</h2>
           <div className="flex flex-col space-y-2">
-            <label className="inline-flex items-center">
+            <label className="inline-flex items-center text-white">
               <input
                 type="radio"
                 className="form-radio text-indigo-600"
@@ -113,7 +126,7 @@ const AptosAccounts = () => {
               />
               <span className="ml-2">Account Data</span>
             </label>
-            <label className="inline-flex items-center">
+            <label className="inline-flex items-center text-white">
               <input
                 type="radio"
                 className="form-radio text-indigo-600"
@@ -123,7 +136,7 @@ const AptosAccounts = () => {
               />
               <span className="ml-2">Module Data</span>
             </label>
-            <label className="inline-flex items-center">
+            <label className="inline-flex items-center text-white">
               <input
                 type="radio"
                 className="form-radio text-indigo-600"
@@ -133,7 +146,7 @@ const AptosAccounts = () => {
               />
               <span className="ml-2">Modules List</span>
             </label>
-            <label className="inline-flex items-center">
+            <label className="inline-flex items-center text-white">
               <input
                 type="radio"
                 className="form-radio text-indigo-600"
@@ -143,7 +156,7 @@ const AptosAccounts = () => {
               />
               <span className="ml-2">Resource</span>
             </label>
-            <label className="inline-flex items-center">
+            <label className="inline-flex items-center text-white">
               <input
                 type="radio"
                 className="form-radio text-indigo-600"
@@ -159,7 +172,7 @@ const AptosAccounts = () => {
         {/* Button to trigger API call */}
         <button
           onClick={handleFetchData}
-          className="w-full bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-700 transition duration-200"
+          className="w-full bg-gradient-to-r from-green-500  via-blue-500 to-purple-500 text-white py-2 px-4 rounded-lg hover:bg-pink-700 transition duration-200"
         >
           Fetch Data
         </button>
@@ -168,32 +181,42 @@ const AptosAccounts = () => {
         <div className="mt-6">
           {accountData && (
             <>
-              <h2 className="text-xl font-semibold mb-2">Account Data</h2>
-              <pre className="bg-gray-100 p-4 rounded-lg">{JSON.stringify(accountData, null, 2)}</pre>
+              <h2 className="text-xl font-semibold mb-2 text-white">Account Data</h2>
+              <pre className="bg-gray-900 text-white p-4 rounded-lg" style={draggableStyle}>
+                {JSON.stringify(accountData, null, 2)}
+              </pre>
             </>
           )}
           {moduleData && (
             <>
-              <h2 className="text-xl font-semibold mb-2">Module Data</h2>
-              <pre className="bg-gray-100 p-4 rounded-lg">{JSON.stringify(moduleData, null, 2)}</pre>
+              <h2 className="text-xl font-semibold mb-2 text-white">Module Data</h2>
+              <pre className="bg-gray-900 text-white p-4 rounded-lg" style={draggableStyle}>
+                {JSON.stringify(moduleData, null, 2)}
+              </pre>
             </>
           )}
           {modulesList && (
             <>
-              <h2 className="text-xl font-semibold mb-2">Modules List</h2>
-              <pre className="bg-gray-100 p-4 rounded-lg">{JSON.stringify(modulesList, null, 2)}</pre>
+              <h2 className="text-xl font-semibold mb-2 text-white">Modules List</h2>
+              <pre className="bg-gray-900 text-white p-4 rounded-lg" style={draggableStyle}>
+                {JSON.stringify(modulesList, null, 2)}
+              </pre>
             </>
           )}
           {resourceData && (
             <>
-              <h2 className="text-xl font-semibold mb-2">Resource Data</h2>
-              <pre className="bg-gray-100 p-4 rounded-lg">{JSON.stringify(resourceData, null, 2)}</pre>
+              <h2 className="text-xl font-semibold mb-2 text-white">Resource Data</h2>
+              <pre className="bg-gray-900 text-white p-4 rounded-lg" style={draggableStyle}>
+                {JSON.stringify(resourceData, null, 2)}
+              </pre>
             </>
           )}
           {resourcesData && (
             <>
-              <h2 className="text-xl font-semibold mb-2">Resources Data</h2>
-              <pre className="bg-gray-100 p-4 rounded-lg">{JSON.stringify(resourcesData, null, 2)}</pre>
+              <h2 className="text-xl font-semibold mb-2 text-white">Resources Data</h2>
+              <pre className="bg-gray-900 text-white p-4 rounded-lg" style={draggableStyle}>
+                {JSON.stringify(resourcesData, null, 2)}
+              </pre>
             </>
           )}
         </div>
@@ -203,6 +226,7 @@ const AptosAccounts = () => {
 };
 
 export default AptosAccounts;
+
 
 
 

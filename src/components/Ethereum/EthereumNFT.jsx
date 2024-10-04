@@ -61,7 +61,7 @@ const EthereumNFT = () => {
   return (
     <div className="min-h-screen bg-black flex items-center justify-center">
       <div className="p-8 bg-black rounded-lg border-4 border-transparent bg-clip-padding max-w-3xl w-full" style={{ borderImage: 'linear-gradient(90deg, #FF0080, #7928CA) 1' }}>
-        <h2 className="text-white text-2xl mb-4">Fetch Ethereum NFTs</h2>
+        <h2 className="text-white text-xl font-semibold mb-4 text-purple-500">Fetch Ethereum NFTs</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label className="text-white mr-4">
@@ -114,8 +114,8 @@ const EthereumNFT = () => {
             </div>
           )}
 
-          <button type="submit" className="px-4 py-2 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded hover:bg-pink-700">
-            Fetch NFTs
+          <button type="submit" className="px-4 py-2 bg-gradient-to-r font-semibold from-pink-500 to-purple-500 text-white rounded hover:bg-pink-700">
+            Fetch Data
           </button>
         </form>
 
