@@ -172,7 +172,7 @@ const AptosAccounts = () => {
         {/* Button to trigger API call */}
         <button
           onClick={handleFetchData}
-          className="w-full bg-gradient-to-r from-green-500  via-blue-500 to-purple-500 text-white py-2 px-4 rounded-lg hover:bg-pink-700 transition duration-200"
+          className="w-full bg-gradient-to-r from-green-500  via-green-700 to-green-300 text-white py-2 px-4 rounded-lg hover:bg-pink-700 transition duration-200"
         >
           Fetch Data
         </button>
