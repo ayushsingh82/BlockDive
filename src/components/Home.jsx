@@ -14,12 +14,8 @@ function BackgroundBeamsDemo() {
           <TypewriterEffectSmoothDemo/>
           </h1>
           <p></p>
-          <p className="text-neutral-500 max-w-lg mx-auto my-2 text-sm text-center relative z-10">
-            Welcome to MailJet, the best transactional email service on the web.
-            We provide reliable, scalable, and customizable email solutions for
-            your business. Whether you&apos;re sending order confirmations,
-            password reset emails, or promotional campaigns, MailJet has got you
-            covered.
+          <p className="text-white max-w-lg mx-auto my-2 text-sm text-center relative z-10">
+          A powerful explorer providing real-time insights into transactions, accounts, and smart contracts on Aptos, Ethereum , Base and much more
           </p>
           <button className='ml-[150px] mt-[20px] '
           style={{
@@ -46,16 +42,16 @@ function BackgroundBeamsDemo() {
 const TypewriterEffectSmoothDemo = () => {
     const words = [
         {
-            text: "Run",
+            text: "Explore",
         },
         {
-            text: "Explore",
+            text: "onchain data ",
         },
         {
             text: "with",
         },
         {
-            text: "Aptos.",
+            text: "BlockDive.",
             className: "text-green-500 dark:text-green-500",
         },
     ];

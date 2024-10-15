@@ -21,7 +21,7 @@ function Navbar() {
       <nav className=''>
         <div className='flex flex-row mx-auto px-[40px] py-[25px] justify-between items-center mt-[0px] bg-black'>
           <div className='font-semibold text-2xl text-green-500'>
-            <a href='/'>Aptos</a>
+            <a href='/'>BlockDive</a>
           </div>
           <div className='flex justify-center flex-1 space-x-8 text-center'>
             <h1 className='font-mediumm text-lg text-white'>
@@ -63,7 +63,17 @@ function Navbar() {
     {/* Dropdown Menu */}
     {dropdownOpen && (
       <div className='absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg'>
+      <a
+          href='/token'
+          className='block px-4 py-2 text-black hover:bg-gray-200'>
+       Tokens
+        </a>
         <a
+          href='/nft'
+          className='block px-4 py-2 text-black hover:bg-gray-200'>
+         NFTs
+        </a> 
+      <a
           href='/aptosaccounts'
           className='block px-4 py-2 text-black hover:bg-gray-200'>
           Aptos Account
@@ -96,7 +106,7 @@ function Navbar() {
         <a
         href='/explorer'
         className='block px-4 py-2 text-black hover:bg-gray-200'>
-        Explorer
+        Mutichain
       </a>
       </div>
     )}
