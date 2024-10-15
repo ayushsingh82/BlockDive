@@ -80,7 +80,7 @@ const Arbitrum = () => {
           borderStyle: 'solid',
         }}
       >
-        <h1 className="text-2xl font-bold mb-4 text-center text-blue-400">Arbitrum API Explorer</h1>
+        <h1 className="text-2xl font-bold mb-4 text-center text-blue-400">Arbitrum  Explorer</h1>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>

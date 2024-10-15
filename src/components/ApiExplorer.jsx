@@ -101,7 +101,7 @@ const ApiExplorer = () => {
         borderStyle: 'solid',
       }}>
         <div className="p-8 w-full max-w-xl bg-black text-white rounded-lg">
-          <h1 className="text-3xl mb-6 text-center">API Explorer</h1>
+          <h1 className="text-3xl mb-6 text-center">Multichain Explorer</h1>
 
           <div className="mb-4">
             <label className="block mb-2">Select Network</label>
